@@ -1,7 +1,14 @@
 import React from "react";
-import { MdDesignServices } from "react-icons/md";
-import { FiCodesandbox } from "react-icons/fi";
-import { CgWebsite } from "react-icons/cg";
+// import { MdOutlineDeveloperBoard } from "react-icons/md";
+import { DiJavascript1 } from "react-icons/di";
+import { DiNodejsSmall } from "react-icons/di";
+import { GrReactjs } from "react-icons/gr";
+import { SiRedux } from "react-icons/si";
+import { AiOutlineHtml5 } from "react-icons/ai";
+import { DiCss3 } from "react-icons/di";
+import { DiPostgresql } from "react-icons/di";
+import { SiSequelize } from "react-icons/si";
+import { SiExpress } from "react-icons/si";
 import styled from "styled-components";
 import Card from "./Card";
 import { Slide } from "react-awesome-reveal";
@@ -18,26 +25,17 @@ const Services = () => {
       <Cards>
         <Slide direction="left">
           <Card
-            Icon={MdDesignServices}
-            title={"ui/ux designer"}
-            disc={`Lorem ipsum dolor sit amet consectetur 
-                adipisicing elit. Commodi et asperiores cum exercitationem officia rem amet minus magnam? Cum, voluptatem?`}
-          />
-        </Slide>
-        <Slide direction="up">
-          <Card
-            Icon={FiCodesandbox}
-            title={"graphic designer"}
-            disc={`Lorem ipsum dolor sit amet consectetur 
-                adipisicing elit. Commodi et asperiores cum exercitationem officia rem amet minus magnam? Cum, voluptatem?`}
-          />
-        </Slide>
-        <Slide direction="right">
-          <Card
-            Icon={CgWebsite}
-            title={"web designer"}
-            disc={`Lorem ipsum dolor sit amet consectetur 
-                adipisicing elit. Commodi et asperiores cum exercitationem officia rem amet minus magnam? Cum, voluptatem?`}
+            Icon1={DiJavascript1}
+            Icon2={DiNodejsSmall}
+            Icon3={GrReactjs}
+            Icon4={SiRedux}
+            Icon5={AiOutlineHtml5}
+            Icon6={DiCss3}
+            Icon7={DiPostgresql}
+            Icon8={SiSequelize}
+            Icon9={SiExpress}
+            title={"Full-stack Web Developer"}
+            desc={`I'm a full-stack web developer using JavaScript as my main language and I have knowledge in Node.js, React, Redux, HTML, CSS, Express, PostgreSQL, and Sequelize. I also wish to continue learning many more technologies that will help me become a better professional.`}
           />
         </Slide>
       </Cards>

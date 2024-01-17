@@ -1,9 +1,9 @@
 import React from "react";
-import styled from "styled-components";
-import { AiOutlineInstagram } from "react-icons/ai";
-import { GiEarthAmerica } from "react-icons/gi";
-import { FaLinkedinIn } from "react-icons/fa";
 import { Slide } from "react-awesome-reveal";
+import { AiOutlineGithub, AiOutlineInstagram } from "react-icons/ai";
+import { FaLinkedinIn } from "react-icons/fa";
+import styled from "styled-components";
+import selfie from "../../images/selfie.jpeg"
 
 const ProfComponent = () => {
   return (
@@ -11,31 +11,29 @@ const ProfComponent = () => {
       <Slide direction="left">
         <Texts>
           <h4>
-            Hello <span className="green">I'am</span>
+            Hi there! <span className="green">I'am</span>
           </h4>
-          <h1 className="green">Milad Amiri</h1>
-          <h3>UX/UI Designer and graphic designer</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores,
-            iusto. Adipisci in qui officia provident tenetur sequi, deserunt
-            corporis quos?
-          </p>
-          <button>Let's talk</button>
+          <h1 className="green">Juan Pablo Valdivia</h1>
+          <h3>Full-Stack Developer</h3>
+          <p></p>
+          <a href="#footer">
+            <button> Let's talk </button>
+          </a>
           <Social>
             <p>Check out my</p>
             <div className="social-icons">
-              <span>
-                <a href="/">
+              {/* <span>
+                <a href="https://www.instagram.com/juampi_valdi/">
                   <AiOutlineInstagram />
                 </a>
-              </span>
+              </span> */}
               <span>
-                <a href="/">
-                  <GiEarthAmerica />
+                <a href="https://github.com/JuanUruloki">
+                  <AiOutlineGithub />
                 </a>
               </span>
               <span>
-                <a href="/">
+                <a href="https://www.linkedin.com/in/juan-pablo-valdivia-4b4724140/">
                   <FaLinkedinIn />
                 </a>
               </span>
@@ -45,10 +43,7 @@ const ProfComponent = () => {
       </Slide>
       <Slide direction="right">
         <Profile>
-          <img
-            src="https://res.cloudinary.com/ghazni/image/upload/v1659082282/Yt-portfolio/Untitled-1_drcspz.png"
-            alt="profile"
-          />
+          <img src={selfie} alt="Juan selfie" />
         </Profile>
       </Slide>
     </Container>
@@ -98,13 +93,13 @@ const Texts = styled.div`
     padding: 0.7rem 2rem;
     margin-top: 3rem;
     cursor: pointer;
-    background-color: #01be96;
+    background-color: #5ebf14;
     border: none;
-    color: #fff;
+    color: #000000;
     font-weight: 500;
-    filter: drop-shadow(0px 10px 10px #01be9551);
+    filter: drop-shadow(0px 10px 10px #50be0151);
     :hover {
-      filter: drop-shadow(0px 10px 10px #01be9570);
+      filter: drop-shadow(0px 10px 10px #a5f1736c);
     }
   }
 `;
@@ -128,7 +123,7 @@ const Social = styled.div`
       width: 2.3rem;
       height: 2rem;
       clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-      background-color: #01be96;
+      background-color: #5ebf14;
       position: relative;
       transition: transform 400ms ease-in-out;
       :hover {
@@ -148,7 +143,7 @@ const Social = styled.div`
 const Profile = styled.div`
   img {
     width: 25rem;
-    filter: drop-shadow(0px 10px 10px #01be9570);
+    filter: drop-shadow(0px 10px 10px #50be0151);
     transition: transform 400ms ease-in-out;
     @media (max-width: 790px) {
       width: 20rem;

@@ -1,32 +1,72 @@
-import React from "react";
-import styled from "styled-components";
-import { MdAlternateEmail } from "react-icons/md";
+import React, { useState } from "react";
+import { AiFillGithub, AiFillLinkedin, AiOutlineArrowUp } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
 import { HiOutlineMailOpen } from "react-icons/hi";
-import { AiFillGithub, AiFillLinkedin, AiOutlineArrowUp } from "react-icons/ai";
-import { BsFacebook, BsSlack } from "react-icons/bs";
+import { MdAlternateEmail } from "react-icons/md";
+import { SiWhatsapp } from "react-icons/si";
+import styled from "styled-components";
+import emailjs from "@emailjs/browser";
+import { Fade, Slide, Zoom } from "react-awesome-reveal";
 import { FiMail, FiPhoneCall } from "react-icons/fi";
-import { Slide, Zoom, Fade } from "react-awesome-reveal";
 
 const Footer = () => {
+  const [templateParams, setTemplateParams] = useState({
+    from_name: "",
+    email: "",
+    message: "",
+  });
+
+  const inputChange = (event) => {
+    const property = event.target.name;
+    let value = event.target.value;
+    setTemplateParams({ ...templateParams, [property]: value });
+    console.log(templateParams);
+  };
+
   const scrollUp = () => {
     window.scroll({
       top: 0,
       behavior: "smooth",
     });
   };
+
+  const sendEmail = (event) => {
+    console.log(templateParams);
+    event.preventDefault();
+    emailjs
+      .send(
+        "service_7n4khni",
+        "template_k13oe0d",
+        templateParams,
+        "duL9ePRQESzvDd9WB"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    setTemplateParams({
+      from_name: "",
+      email: "",
+      message: "",
+    });
+  };
+
   return (
     <Container id="footer">
       <Profile>
         <Slide direction="left" delay={1}>
-          <h1>Portfolio</h1>
+          <h1>Contact</h1>
         </Slide>
         <div className="address">
           <Slide direction="left">
-            <h1>Address:</h1>
+            <h1>Location:</h1>
           </Slide>
           <Slide direction="left">
-            <p>1030 Southwood Dr San Luis Obispo, California(CA), 93401</p>
+            <p>Córdoba, Córdoba, Argentina (GMT -3)</p>
           </Slide>
         </div>
         <div className="links">
@@ -38,7 +78,9 @@ const Footer = () => {
               <FiPhoneCall />
             </span>
             <Slide direction="left">
-              <a href="tel:+4733378901">+47 333 78 901</a>
+              <a target="_blanck" href="https://bit.ly/JuanPabloValdivia">
+                +54 3513378459
+              </a>
             </Slide>
           </div>
           <div>
@@ -48,7 +90,7 @@ const Footer = () => {
               </span>
             </Slide>
             <Slide>
-              <a href="mailto:miladamiri@gmail.com">miladamiri@gmail.com</a>
+              <a href="mailto:juanuruloki@gmail.com">juanuruloki@gmail.com</a>
             </Slide>
           </div>
         </div>
@@ -59,29 +101,28 @@ const Footer = () => {
           <div className="icons">
             <Zoom>
               <span>
-                <a href="/">
+                <a target="_blanck" href="https://github.com/JuanUruloki">
                   <AiFillGithub />
                 </a>
               </span>
             </Zoom>
             <Zoom>
               <span>
-                <a href="/">
+                <a
+                  target="_blanck"
+                  href="https://www.linkedin.com/in/juan-pablo-valdivia-4b4724140/"
+                >
                   <AiFillLinkedin />
                 </a>
               </span>
             </Zoom>
             <Zoom>
               <span>
-                <a href="/">
-                  <BsFacebook />
-                </a>
-              </span>
-            </Zoom>
-            <Zoom>
-              <span>
-                <a href="/">
-                  <BsSlack />
+                <a
+                  target="_blanck"
+                  href="https://bit.ly/JuanPabloValdivia"
+                >
+                  <SiWhatsapp />
                 </a>
               </span>
             </Zoom>
@@ -95,26 +136,42 @@ const Footer = () => {
       </Profile>
       <Form>
         <Slide direction="right">
-          <form>
+          <form onSubmit={sendEmail}>
             <div className="name">
               <span>
                 <CgProfile />
               </span>
-              <input type="text" placeholder="Fullname..." />
+              <input
+                type="text"
+                name="name"
+                placeholder="Fullname..."
+                onChange={inputChange}
+              />
             </div>
             <div className="email">
               <span>
                 <MdAlternateEmail />
               </span>
-              <input type="email" placeholder="Email..." />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email..."
+                onChange={inputChange}
+              />
             </div>
             <div className="message">
               <span className="messageIcon">
                 <FiMail />
               </span>
-              <textarea cols="30" rows="10" placeholder="Message..."></textarea>
+              <textarea
+                cols="30"
+                rows="10"
+                name="message"
+                placeholder="Message..."
+                onChange={inputChange}
+              ></textarea>
             </div>
-            <button>Submit</button>
+            <button type="submit">Submit</button>
           </form>
         </Slide>
       </Form>
@@ -173,7 +230,7 @@ const Profile = styled.div`
         text-decoration: none;
         color: lightgray;
         :hover {
-          color: orange;
+          color: #5ebf14;
         }
       }
     }
@@ -200,7 +257,7 @@ const Profile = styled.div`
         border-radius: 50px;
 
         :hover {
-          background-color: orange;
+          background-color: #5ebf14;
         }
 
         a {
@@ -214,7 +271,8 @@ const Profile = styled.div`
 const ArrowUp = styled.div`
   width: 2rem;
   height: 2rem;
-  background-color: #01be96;
+  background-color: #5ebf14;
+  color: black;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -270,13 +328,13 @@ const Form = styled.div`
     button {
       width: 5rem;
       height: 1.8rem;
-      background-color: #01be96;
+      background-color: #5ebf14;
       border: none;
       border-radius: 5px;
-      filter: drop-shadow(0px 4px 5px #01be9551);
+      filter: drop-shadow(0px 4px 5px #50be0151);
       cursor: pointer;
       :hover {
-        filter: drop-shadow(0px 6px 9px #01be9551);
+        filter: drop-shadow(0px 6px 9px #a5f1736c);
       }
     }
   }
