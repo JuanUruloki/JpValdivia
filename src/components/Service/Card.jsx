@@ -12,6 +12,10 @@ const Card = (props) => {
     Icon7,
     Icon8,
     Icon9,
+    Icon10,
+    Icon11,
+    Icon12,
+    Icon13,
     desc,
     title,
   } = props;
@@ -28,6 +32,10 @@ const Card = (props) => {
         <Icon7 />
         <Icon8 />
         <Icon9 />
+        <Icon10 />
+        <Icon11 />
+        <Icon12 />
+        <Icon13 />
       </span>
       <p>{desc}</p>
     </Container>

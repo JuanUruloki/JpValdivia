@@ -4,9 +4,23 @@ import Slider from "react-slick";
 import styled from "styled-components";
 import BonAppetit from "../../images/BonAppetit.png";
 import Countries from "../../images/Countries.png";
+import Epick from "../../images/Epick.png";
+import Ardu from "../../images/Ardu Hermanos.png";
 import Project from "./Project";
 
 let data = [
+  {
+    img: Ardu,
+    disc: "Institutional website for a chemical products company, focusing on the frontend to ensure a user-friendly and visually appealing interface.",
+    demo: "https://bonappetite.vercel.app/customer/",
+
+  },
+  {
+    img: Epick,
+    disc: "Web application for a logistics company that manages package tracking and shipment billing. The web application allows customers to register or log in, where they can manage all their data, shipments, and track their packages.",
+    demo: "https://epick.vercel.app/",
+
+  },
   {
     img: Countries,
     disc: "A web application designed for travelers that allows them to search for information about countries of interest and create tourist activities.",

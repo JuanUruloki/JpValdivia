@@ -3,7 +3,7 @@ import { Slide } from "react-awesome-reveal";
 import { AiOutlineGithub, AiOutlineInstagram } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 import styled from "styled-components";
-import selfie from "../../images/selfie.jpeg"
+import selfie from "../../images/selfie.svg"
 
 const ProfComponent = () => {
   return (
@@ -142,7 +142,7 @@ const Social = styled.div`
 `;
 const Profile = styled.div`
   img {
-    width: 25rem;
+    width: 55rem;
     filter: drop-shadow(0px 10px 10px #50be0151);
     transition: transform 400ms ease-in-out;
     @media (max-width: 790px) {
