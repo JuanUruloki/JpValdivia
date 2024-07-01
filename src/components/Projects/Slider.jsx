@@ -12,7 +12,7 @@ let data = [
   {
     img: Ardu,
     disc: "Institutional website for a chemical products company, focusing on the frontend to ensure a user-friendly and visually appealing interface.",
-    demo: "https://bonappetite.vercel.app/customer/",
+    demo: "https://arduhnos.com",
 
   },
   {
