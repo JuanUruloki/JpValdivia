@@ -11,7 +11,7 @@ const Project = (props) => {
         <p>
           {disc}
           <a target="_blank" rel="noreferrer" href={demo}>
-            demo
+            DEMO
           </a>
         </p>
       </div>
@@ -52,16 +52,16 @@ const Container = styled.div`
 
     p {
       width: 100%;
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       a {
         margin-left: 0.4rem;
-        color: red;
+        color: #5ebf14;
       }
     }
   }
 
   :hover > img {
-    transform: scale(1.3);
+    transform: scale(1.1);
   }
 
   :hover > .disc {
